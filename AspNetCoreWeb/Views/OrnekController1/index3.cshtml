@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "index3";
+}
+
+<h1>index3</h1>
+
+<p>@TempData["İller"]</p>
+
+
+@using AspNetCoreWeb.Controllers
+@model List<urunler>
+
+@foreach (var liste in Model)
+{
+
+    <p>@liste.Id- @liste.UrunAdı</p>
+}

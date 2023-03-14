@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Deneme Başlığı</h1>
+<body>Deneme Body</body>
+
+
+@{
+
+    var degisken = ViewBag.isim;
+}
+
+<p>@degisken</p>
+
+<p>@ViewBag.isim</p>
+
+<p>@ViewBag.isim</p>
+
+
+
+
+<hr />
+
+<p>Yaş: @ViewData["Yaş"]</p>
+
+<hr />
+
+@foreach (string isimlistesi in ViewData["İsimler"] as List<string>)
+{
+    <p>@isimlistesi</p>
+}
+
+
+<p>ID: @ViewBag.kisiler.Id- İsim: @ViewBag.kisiler.İsim- Yaş: @ViewBag.kisiler.Yaş</p>
+
