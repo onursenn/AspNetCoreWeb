@@ -26,6 +26,8 @@ namespace AspNetCoreWeb.Controllers
 
 
             ViewData["İsimler"] = new List<string>() { "Ali", "Mehmet", "Furkan", "Deniz" };
+
+            ViewData["Sehirler"] = new List<string>() { "Adana", "Mersin", "Tokat" };
           
             ViewBag.isim = "Onur.Sen";
             return View();

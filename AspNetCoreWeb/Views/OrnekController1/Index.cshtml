@@ -35,9 +35,9 @@
 
 <p>ID: @ViewBag.kisiler.Id- İsim: @ViewBag.kisiler.İsim- Yaş: @ViewBag.kisiler.Yaş</p>
 
-@foreach (int sayilarr in ViewData["Sayilar"] as List<int>)
+@foreach (string sehirler in ViewData["Sehirler"] as List<string>)
 {
 
-    <p>@sayilarr</p>
+    <p>@sehirler</p>
 
 }

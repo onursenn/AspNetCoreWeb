@@ -2,46 +2,38 @@
 {
     public class ProductRepository
     {
-        private static List<product> _products = new List<product>()
-        {
-           new() { Id = 1, Name = "Kalem 1", Price = 100, Stock = 200 },
-           new () { Id = 2, Name = "Kalem 2", Price = 200, Stock = 300 },
-           new () { Id = 3, Name = "Kalem 3", Price = 300, Stock = 400 }
-        };
+        private static List<Product> _products;
 
-        public List<product> GetAll() => _products;
+        public List<Product> GetAll() => _products;
 
-        public void add(product newproduct) => _products.Add(newproduct);
+        public void Add(Product newProduct) => _products.Add(newProduct);
 
-        public void remove(int id)
+        public void Remove(int id)
         {
             var hasProduct = _products.FirstOrDefault(x => x.Id == id);
-
             if (hasProduct == null)
             {
-                throw new Exception($"Bu id({id})' ye sahip ürün bulunamadı.");
+                throw new Exception($"Bu ıd({id}) ye sahip ürün yoktur");
             }
             _products.Remove(hasProduct);
         }
 
-        public void update(product updateproduct)
+        public void Update(Product updateproduct)
         {
+            var hasProduct = _products.FirstOrDefault(x => x.Id == updateproduct.Id);
 
-            var hasproduct = _products.FirstOrDefault(x => x.Id == updateproduct.Id);
-
-            if (hasproduct == null)
+            if (hasProduct == null)
             {
-                throw new Exception($"Bu id({updateproduct.Id})'ye sahip ürün bulunmamaktadır.");
+                throw new Exception($"Bu ıd({id}) ye sahip ürün yoktur");
             }
-            hasproduct.Name = updateproduct.Name;
-            hasproduct.Price = updateproduct.Price;
-            hasproduct.Stock = updateproduct.Stock;
+
+            hasProduct.Name = updateproduct.Name;
+            hasProduct.Price = updateproduct.Price;
+            hasProduct.Stock = updateproduct.Stock;
 
             var index = _products.FindIndex(x => x.Id == updateproduct.Id);
 
-            _products[index] = hasproduct;
-
+            _products[index] = hasProduct;
         }
-
     }
 }
