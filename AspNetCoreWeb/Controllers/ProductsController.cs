@@ -12,9 +12,9 @@ namespace AspNetCoreWeb.Controllers
             _context =context;
             if (!_context.Products.Any())
             {
-                _context.Products.Add(new Product() { Name = "MasaÖrtüsü", Price = 45, Stock = 10,Color="Blue",Height=100,Width=20 });
-                _context.Products.Add(new Product() { Name = "Dolap", Price = 70, Stock = 14, Color="Red",Height=10,Width=25 });
-                _context.Products.Add(new Product() { Name = "Cüzdan", Price = 50, Stock = 19,Color="Black",Height=45,Width=12 });
+                _context.Products.Add(new Product() { Name = "MasaÖrtüsü", Price = 45, Stock = 10,Color="Blue" });
+                _context.Products.Add(new Product() { Name = "Dolap", Price = 70, Stock = 14, Color="Red" });
+                _context.Products.Add(new Product() { Name = "Cüzdan", Price = 50, Stock = 19,Color="Black"});
                 _context.SaveChanges();
             }
         }
